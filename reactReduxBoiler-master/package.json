@@ -66,12 +66,15 @@
     "react-promise": "^1.1.2",
     "react-redux": "^4.0.0",
     "react-router": "^2.8.1",
+    "react-router-dom": "^4.1.1",
     "react-swipeable-views": "^0.10.2",
     "react-tap-event-plugin": "^2.0.1",
     "redux": "^3.0.4",
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.2.0",
     "request": "^2.79.0",
+    "spotify-web-api-js": "^0.21.2",
+    "spotify-web-api-node": "^2.3.6",
     "webpack": "^1.14.0",
     "youtube-api-search": "0.0.5"
   }
