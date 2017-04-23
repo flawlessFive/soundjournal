@@ -31044,15 +31044,11 @@
 
 	var _reactDom = __webpack_require__(32);
 
-	var _AwesomeComponent = __webpack_require__(367);
-
-	var _AwesomeComponent2 = _interopRequireDefault(_AwesomeComponent);
-
-	var _calendar = __webpack_require__(368);
+	var _calendar = __webpack_require__(367);
 
 	var _calendar2 = _interopRequireDefault(_calendar);
 
-	var _navbar = __webpack_require__(426);
+	var _navbar = __webpack_require__(368);
 
 	var _navbar2 = _interopRequireDefault(_navbar);
 
@@ -31106,78 +31102,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	var _reactRedux = __webpack_require__(178);
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	var _redux = __webpack_require__(185);
 
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var AwesomeComponent = function (_React$Component) {
-	  _inherits(AwesomeComponent, _React$Component);
-
-	  function AwesomeComponent(props) {
-	    _classCallCheck(this, AwesomeComponent);
-
-	    var _this = _possibleConstructorReturn(this, (AwesomeComponent.__proto__ || Object.getPrototypeOf(AwesomeComponent)).call(this, props));
-
-	    _this.state = { likesCount: 0 };
-	    _this.onLike = _this.onLike.bind(_this);
-	    return _this;
-	  }
-
-	  _createClass(AwesomeComponent, [{
-	    key: 'onLike',
-	    value: function onLike() {
-	      var newLikesCount = this.state.likesCount + 1;
-	      this.setState({ likesCount: newLikesCount });
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        'Likes : ',
-	        _react2.default.createElement(
-	          'span',
-	          null,
-	          this.state.likesCount
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          null,
-	          _react2.default.createElement(
-	            'button',
-	            { onClick: this.onLike },
-	            'Like Me'
-	          )
-	        )
-	      );
-	    }
-	  }]);
-
-	  return AwesomeComponent;
-	}(_react2.default.Component);
-
-	exports.default = AwesomeComponent;
-
-/***/ },
-/* 368 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
+	var _getSong = __webpack_require__(459);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -31197,1212 +31126,1222 @@
 	  }
 
 	  _createClass(Calendar, [{
-	    key: "render",
+	    key: 'render',
 	    value: function render() {
+	      var _this2 = this;
+
 	      return _react2.default.createElement(
-	        "div",
+	        'div',
 	        null,
 	        _react2.default.createElement(
-	          "div",
-	          { className: "container" },
+	          'div',
+	          { className: 'container' },
 	          _react2.default.createElement(
-	            "div",
-	            { className: "row" },
+	            'div',
+	            { className: 'row' },
 	            _react2.default.createElement(
-	              "div",
-	              { id: "overview", className: "col-sm-4 col-md-3 animated bounceInUp" },
+	              'div',
+	              { id: 'overview', className: 'col-sm-4 col-md-3 animated bounceInUp' },
 	              _react2.default.createElement(
-	                "h2",
+	                'h2',
 	                null,
-	                "Your Calendars"
+	                'Your Calendars'
 	              ),
 	              _react2.default.createElement(
-	                "h5",
+	                'h5',
 	                null,
 	                _react2.default.createElement(
-	                  "a",
-	                  { "data-toggle": "collapse", href: "#collapseTwo" },
-	                  _react2.default.createElement("i", { className: "fa fa-cal fa-fw" }),
-	                  "Calendars you Follow"
+	                  'a',
+	                  { 'data-toggle': 'collapse', href: '#collapseTwo' },
+	                  _react2.default.createElement('i', { className: 'fa fa-cal fa-fw' }),
+	                  'Calendars you Follow'
 	                )
 	              ),
 	              _react2.default.createElement(
-	                "div",
-	                { id: "collapseTwo", className: "collapse in" },
+	                'div',
+	                { id: 'collapseTwo', className: 'collapse in' },
 	                _react2.default.createElement(
-	                  "div",
-	                  { className: "list-group" },
+	                  'div',
+	                  { className: 'list-group' },
 	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "list-group-item" },
+	                    'div',
+	                    { className: 'list-group-item' },
 	                    _react2.default.createElement(
-	                      "a",
-	                      { href: "#course_1", "data-toggle": "collapse", className: "text-success" },
+	                      'a',
+	                      { href: '#course_1', 'data-toggle': 'collapse', className: 'text-success' },
 	                      _react2.default.createElement(
-	                        "strong",
+	                        'strong',
 	                        null,
-	                        "Friends"
+	                        'Friends'
 	                      )
 	                    ),
 	                    _react2.default.createElement(
-	                      "span",
-	                      { className: "badge pull-right" },
-	                      "2"
+	                      'span',
+	                      { className: 'badge pull-right' },
+	                      '2'
 	                    ),
 	                    _react2.default.createElement(
-	                      "div",
-	                      { id: "course_1", className: "collapse" },
-	                      "Sherry's Calendar"
+	                      'div',
+	                      { id: 'course_1', className: 'collapse' },
+	                      'Sherry\'s Calendar'
 	                    ),
 	                    _react2.default.createElement(
-	                      "div",
-	                      { id: "course_1", className: "collapse" },
-	                      "Daria's calendar"
+	                      'div',
+	                      { id: 'course_1', className: 'collapse' },
+	                      'Daria\'s calendar'
 	                    )
 	                  )
 	                ),
 	                _react2.default.createElement(
-	                  "div",
-	                  { className: "checkbox" },
+	                  'div',
+	                  { className: 'checkbox' },
 	                  _react2.default.createElement(
-	                    "label",
+	                    'label',
 	                    null,
-	                    _react2.default.createElement("input", { type: "checkbox", defaultValue: true }),
+	                    _react2.default.createElement('input', { type: 'checkbox', defaultValue: true }),
 	                    _react2.default.createElement(
-	                      "a",
-	                      { href: "#course_2", "data-toggle": "collapse", className: "text-info" },
+	                      'a',
+	                      { href: '#course_2', 'data-toggle': 'collapse', className: 'text-info' },
 	                      _react2.default.createElement(
-	                        "strong",
+	                        'strong',
 	                        null,
-	                        "Sherry's Calendar"
+	                        'Sherry\'s Calendar'
 	                      )
 	                    )
 	                  ),
 	                  _react2.default.createElement(
-	                    "span",
-	                    { className: "badge pull-right" },
-	                    "1"
+	                    'span',
+	                    { className: 'badge pull-right' },
+	                    '1'
 	                  ),
 	                  _react2.default.createElement(
-	                    "label",
+	                    'label',
 	                    null,
-	                    _react2.default.createElement("input", { type: "checkbox", defaultValue: true }),
+	                    _react2.default.createElement('input', { type: 'checkbox', defaultValue: true }),
 	                    _react2.default.createElement(
-	                      "a",
-	                      { href: "#course_2", "data-toggle": "collapse", className: "text-info" },
+	                      'a',
+	                      { href: '#course_2', 'data-toggle': 'collapse', className: 'text-info' },
 	                      _react2.default.createElement(
-	                        "strong",
+	                        'strong',
 	                        null,
-	                        "Daria's Calendar"
+	                        'Daria\'s Calendar'
 	                      )
 	                    )
 	                  ),
-	                  _react2.default.createElement("span", { className: "badge pull-right" }),
+	                  _react2.default.createElement('span', { className: 'badge pull-right' }),
 	                  _react2.default.createElement(
-	                    "label",
+	                    'label',
 	                    null,
-	                    _react2.default.createElement("input", { type: "checkbox", defaultValue: true }),
+	                    _react2.default.createElement('input', { type: 'checkbox', defaultValue: true }),
 	                    _react2.default.createElement(
-	                      "a",
-	                      { href: "#course_2", "data-toggle": "collapse", className: "text-info" },
+	                      'a',
+	                      { href: '#course_2', 'data-toggle': 'collapse', className: 'text-info' },
 	                      _react2.default.createElement(
-	                        "strong",
+	                        'strong',
 	                        null,
-	                        "Tionna's Calendar"
+	                        'Tionna\'s Calendar'
 	                      )
 	                    )
 	                  ),
-	                  _react2.default.createElement("span", { className: "badge pull-right" })
+	                  _react2.default.createElement('span', { className: 'badge pull-right' })
 	                ),
 	                _react2.default.createElement(
-	                  "div",
-	                  { id: "course_2", className: "collapse" },
-	                  _react2.default.createElement("hr", { style: { margin: '10px auto' } }),
+	                  'div',
+	                  { id: 'course_2', className: 'collapse' },
+	                  _react2.default.createElement('hr', { style: { margin: '10px auto' } }),
 	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "checkbox" },
+	                    'div',
+	                    { className: 'checkbox' },
 	                    _react2.default.createElement(
-	                      "label",
+	                      'label',
 	                      null,
-	                      _react2.default.createElement("input", { type: "checkbox", defaultValue: true }),
-	                      "Sam G.'s Calendar"
+	                      _react2.default.createElement('input', { type: 'checkbox', defaultValue: true }),
+	                      'Sam G.\'s Calendar'
 	                    )
 	                  )
 	                )
 	              )
 	            ),
 	            _react2.default.createElement(
-	              "div",
-	              { id: "calendar", className: "col-sm-8 col-md-9 animated animated-sm bounceInUp" },
+	              'div',
+	              { id: 'calendar', className: 'col-sm-8 col-md-9 animated animated-sm bounceInUp' },
 	              _react2.default.createElement(
-	                "h2",
+	                'h2',
 	                null,
-	                _react2.default.createElement("small", null),
-	                _react2.default.createElement("i", { className: "fa fa-plus fa-fw pull-right small btn btn-block" })
+	                _react2.default.createElement('small', null),
+	                _react2.default.createElement('i', { className: 'fa fa-plus fa-fw pull-right small btn btn-block' })
 	              ),
 	              _react2.default.createElement(
-	                "div",
-	                { className: "panel panel-default" },
+	                'div',
+	                { className: 'panel panel-default' },
 	                _react2.default.createElement(
-	                  "div",
-	                  { className: "panel-body" },
+	                  'div',
+	                  { className: 'panel-body' },
 	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "calendar fc fc-ltr" },
+	                    'div',
+	                    { className: 'calendar fc fc-ltr' },
 	                    _react2.default.createElement(
-	                      "table",
-	                      { className: "fc-header", style: { width: '100%' } },
+	                      'table',
+	                      { className: 'fc-header', style: { width: '100%' } },
 	                      _react2.default.createElement(
-	                        "tbody",
+	                        'tbody',
 	                        null,
 	                        _react2.default.createElement(
-	                          "tr",
+	                          'tr',
 	                          null,
 	                          _react2.default.createElement(
-	                            "td",
-	                            { className: "fc-header-center" },
-	                            " ",
+	                            'td',
+	                            { className: 'fc-header-center' },
+	                            ' ',
 	                            _react2.default.createElement(
-	                              "span",
-	                              { className: "fc-header-title" },
+	                              'span',
+	                              { className: 'fc-header-title' },
 	                              _react2.default.createElement(
-	                                "h2",
+	                                'h2',
 	                                null,
-	                                "April 2017"
+	                                'April 2017'
 	                              ),
-	                              "      "
+	                              '      '
 	                            )
 	                          )
 	                        )
 	                      )
 	                    ),
 	                    _react2.default.createElement(
-	                      "div",
-	                      { className: "fc-content", style: { position: 'relative', minHeight: 1 } },
+	                      'div',
+	                      { className: 'fc-content', style: { position: 'relative', minHeight: 1 } },
 	                      _react2.default.createElement(
-	                        "div",
-	                        { className: "fc-view fc-view-month fc-grid", style: { position: 'relative', minHeight: 1 }, unselectable: "on" },
+	                        'div',
+	                        { className: 'fc-view fc-view-month fc-grid', style: { position: 'relative', minHeight: 1 }, unselectable: 'on' },
 	                        _react2.default.createElement(
-	                          "div",
+	                          'div',
 	                          { style: { position: 'absolute', zIndex: 8, top: 0, left: 0 } },
 	                          _react2.default.createElement(
-	                            "div",
-	                            { className: "fc-event fc-event-hori fc-event-draggable fc-event-start fc-event-end ui-draggable", style: { position: 'absolute', zIndex: 8, left: 495, top: 60 }, unselectable: "on" },
+	                            'div',
+	                            { className: 'fc-event fc-event-hori fc-event-draggable fc-event-start fc-event-end ui-draggable', style: { position: 'absolute', zIndex: 8, left: 495, top: 60 }, unselectable: 'on' },
 	                            _react2.default.createElement(
-	                              "div",
-	                              { className: "fc-event-inner" },
-	                              " ",
-	                              _react2.default.createElement("span", { className: "fc-event-title", style: { position: 'relative', left: 18, top: 10, fontSize: 20 } })
+	                              'div',
+	                              { className: 'fc-event-inner', onClick: function onClick() {
+	                                  _this2.props.getSong(1);
+	                                } },
+	                              ' ',
+	                              _react2.default.createElement('span', { className: 'fc-event-title', style: { position: 'relative', left: 18, top: 10, fontSize: 20 } })
 	                            ),
 	                            _react2.default.createElement(
-	                              "div",
-	                              { className: "ui-resizable-handle ui-resizable-e" },
-	                              "\xA0\xA0\xA0"
+	                              'div',
+	                              { className: 'ui-resizable-handle ui-resizable-e' },
+	                              '\xA0\xA0\xA0'
 	                            )
 	                          ),
 	                          _react2.default.createElement(
-	                            "div",
-	                            { className: "fc-event fc-event-hori fc-event-draggable fc-event-start", style: { position: 'absolute', zIndex: 8, left: 804, width: 304, top: 352 } },
+	                            'div',
+	                            { className: 'fc-event fc-event-hori fc-event-draggable fc-event-start', style: { position: 'absolute', zIndex: 8, left: 804, width: 304, top: 352 } },
 	                            _react2.default.createElement(
-	                              "div",
-	                              { className: "fc-event-inner" },
-	                              " ",
-	                              _react2.default.createElement("span", { className: "fc-event-title", style: { position: 'relative', left: 18, top: 10, fontSize: 20 } })
+	                              'div',
+	                              { className: 'fc-event-inner', onClick: function onClick() {
+	                                  _this2.props.getSong(1);
+	                                } },
+	                              ' ',
+	                              _react2.default.createElement('span', { className: 'fc-event-title', style: { position: 'relative', left: 18, top: 10, fontSize: 20 } })
 	                            )
 	                          ),
 	                          _react2.default.createElement(
-	                            "div",
-	                            { className: "fc-event fc-event-hori fc-event-draggable fc-event-end", style: { position: 'absolute', zIndex: 8, left: 20, top: 470 } },
+	                            'div',
+	                            { className: 'fc-event fc-event-hori fc-event-draggable fc-event-end', style: { position: 'absolute', zIndex: 8, left: 20, top: 470 } },
 	                            _react2.default.createElement(
-	                              "div",
-	                              { className: "fc-event-inner" },
-	                              " ",
-	                              _react2.default.createElement("span", { className: "fc-event-title", style: { position: 'relative', left: 17, top: 9, fontSize: 20 } })
+	                              'div',
+	                              { className: 'fc-event-inner', onClick: function onClick() {
+	                                  _this2.props.getSong(2);
+	                                } },
+	                              ' ',
+	                              _react2.default.createElement('span', { className: 'fc-event-title', style: { position: 'relative', left: 17, top: 9, fontSize: 20 } })
 	                            ),
 	                            _react2.default.createElement(
-	                              "div",
-	                              { className: "ui-resizable-handle ui-resizable-e" },
-	                              "\xA0\xA0\xA0"
+	                              'div',
+	                              { className: 'ui-resizable-handle ui-resizable-e' },
+	                              '\xA0\xA0\xA0'
 	                            )
 	                          ),
 	                          _react2.default.createElement(
-	                            "div",
-	                            { className: "fc-event fc-event-hori fc-event-draggable fc-event-start fc-event-end", style: { position: 'absolute', zIndex: 8, left: 306, top: 265 } },
+	                            'div',
+	                            { className: 'fc-event fc-event-hori fc-event-draggable fc-event-start fc-event-end', style: { position: 'absolute', zIndex: 8, left: 306, top: 265 } },
 	                            _react2.default.createElement(
-	                              "div",
-	                              { className: "fc-event-inner" },
-	                              " ",
-	                              _react2.default.createElement("span", { className: "fc-event-title", style: { position: 'relative', top: 11, left: 18, fontSize: 20 } })
+	                              'div',
+	                              { className: 'fc-event-inner', onClick: function onClick() {
+	                                  _this2.props.getSong(3);
+	                                } },
+	                              ' ',
+	                              _react2.default.createElement('span', { className: 'fc-event-title', style: { position: 'relative', top: 11, left: 18, fontSize: 20 } })
 	                            ),
 	                            _react2.default.createElement(
-	                              "div",
-	                              { className: "ui-resizable-handle ui-resizable-e" },
-	                              "\xA0\xA0\xA0"
+	                              'div',
+	                              { className: 'ui-resizable-handle ui-resizable-e' },
+	                              '\xA0\xA0\xA0'
 	                            )
 	                          )
 	                        ),
 	                        _react2.default.createElement(
-	                          "table",
-	                          { className: "fc-border-separate", style: { width: '100%' }, cellSpacing: 0 },
+	                          'table',
+	                          { className: 'fc-border-separate', style: { width: '100%' }, cellSpacing: 0 },
 	                          _react2.default.createElement(
-	                            "thead",
+	                            'thead',
 	                            null,
 	                            _react2.default.createElement(
-	                              "tr",
-	                              { className: "fc-first fc-last" },
+	                              'tr',
+	                              { className: 'fc-first fc-last' },
 	                              _react2.default.createElement(
-	                                "th",
-	                                { className: "fc-day-header fc-sun fc-widget-header fc-first", style: { width: 158 } },
-	                                "Sun"
+	                                'th',
+	                                { className: 'fc-day-header fc-sun fc-widget-header fc-first', style: { width: 158 } },
+	                                'Sun'
 	                              ),
 	                              _react2.default.createElement(
-	                                "th",
-	                                { className: "fc-day-header fc-mon fc-widget-header", style: { width: 158 } },
-	                                "Mon"
+	                                'th',
+	                                { className: 'fc-day-header fc-mon fc-widget-header', style: { width: 158 } },
+	                                'Mon'
 	                              ),
 	                              _react2.default.createElement(
-	                                "th",
-	                                { className: "fc-day-header fc-tue fc-widget-header", style: { width: 158 } },
-	                                "Tue"
+	                                'th',
+	                                { className: 'fc-day-header fc-tue fc-widget-header', style: { width: 158 } },
+	                                'Tue'
 	                              ),
 	                              _react2.default.createElement(
-	                                "th",
-	                                { className: "fc-day-header fc-wed fc-widget-header", style: { width: 158 } },
-	                                "Wed"
+	                                'th',
+	                                { className: 'fc-day-header fc-wed fc-widget-header', style: { width: 158 } },
+	                                'Wed'
 	                              ),
 	                              _react2.default.createElement(
-	                                "th",
-	                                { className: "fc-day-header fc-thu fc-widget-header", style: { width: 158 } },
-	                                "Thu"
+	                                'th',
+	                                { className: 'fc-day-header fc-thu fc-widget-header', style: { width: 158 } },
+	                                'Thu'
 	                              ),
 	                              _react2.default.createElement(
-	                                "th",
-	                                { className: "fc-day-header fc-fri fc-widget-header", style: { width: 158 } },
-	                                "Fri"
+	                                'th',
+	                                { className: 'fc-day-header fc-fri fc-widget-header', style: { width: 158 } },
+	                                'Fri'
 	                              ),
 	                              _react2.default.createElement(
-	                                "th",
-	                                { className: "fc-day-header fc-sat fc-widget-header fc-last", style: { width: 158 } },
-	                                "Sat"
+	                                'th',
+	                                { className: 'fc-day-header fc-sat fc-widget-header fc-last', style: { width: 158 } },
+	                                'Sat'
 	                              )
 	                            )
 	                          ),
 	                          _react2.default.createElement(
-	                            "tbody",
+	                            'tbody',
 	                            null,
 	                            _react2.default.createElement(
-	                              "tr",
-	                              { className: "fc-week fc-first" },
+	                              'tr',
+	                              { className: 'fc-week fc-first' },
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-sun fc-widget-content fc-other-month fc-first", "data-date": "2013-12-29" },
+	                                'td',
+	                                { className: 'fc-day fc-sun fc-widget-content fc-other-month fc-first', 'data-date': '2013-12-29' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  { style: { minHeight: 80 } },
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 25 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-mon fc-widget-content fc-other-month", "data-date": "2013-12-30" },
+	                                'td',
+	                                { className: 'fc-day fc-mon fc-widget-content fc-other-month', 'data-date': '2013-12-30' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 25 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-tue fc-widget-content fc-other-month", "data-date": "2013-12-31" },
+	                                'td',
+	                                { className: 'fc-day fc-tue fc-widget-content fc-other-month', 'data-date': '2013-12-31' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 25 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-wed fc-widget-content", "data-date": "2014-01-01" },
+	                                'td',
+	                                { className: 'fc-day fc-wed fc-widget-content', 'data-date': '2014-01-01' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 25 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-thu fc-widget-content", "data-date": "2014-01-02" },
+	                                'td',
+	                                { className: 'fc-day fc-thu fc-widget-content', 'data-date': '2014-01-02' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 25 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-fri fc-widget-content", "data-date": "2014-01-03" },
+	                                'td',
+	                                { className: 'fc-day fc-fri fc-widget-content', 'data-date': '2014-01-03' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 25 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-sat fc-widget-content fc-last", "data-date": "2014-01-04" },
+	                                'td',
+	                                { className: 'fc-day fc-sat fc-widget-content fc-last', 'data-date': '2014-01-04' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "1"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '1'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 25 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              )
 	                            ),
 	                            _react2.default.createElement(
-	                              "tr",
-	                              { className: "fc-week" },
+	                              'tr',
+	                              { className: 'fc-week' },
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-sun fc-widget-content fc-first", "data-date": "2014-01-05" },
+	                                'td',
+	                                { className: 'fc-day fc-sun fc-widget-content fc-first', 'data-date': '2014-01-05' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  { style: { minHeight: 80 } },
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "2"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '2'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 0 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-mon fc-widget-content", "data-date": "2014-01-06" },
+	                                'td',
+	                                { className: 'fc-day fc-mon fc-widget-content', 'data-date': '2014-01-06' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "3"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '3'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 0 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-tue fc-widget-content", "data-date": "2014-01-07" },
+	                                'td',
+	                                { className: 'fc-day fc-tue fc-widget-content', 'data-date': '2014-01-07' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "4"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '4'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 0 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-wed fc-widget-content", "data-date": "2014-01-08" },
+	                                'td',
+	                                { className: 'fc-day fc-wed fc-widget-content', 'data-date': '2014-01-08' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "5"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '5'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 0 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-thu fc-widget-content", "data-date": "2014-01-09" },
+	                                'td',
+	                                { className: 'fc-day fc-thu fc-widget-content', 'data-date': '2014-01-09' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "6"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '6'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 0 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-fri fc-widget-content", "data-date": "2014-01-10" },
+	                                'td',
+	                                { className: 'fc-day fc-fri fc-widget-content', 'data-date': '2014-01-10' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "7"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '7'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 0 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-sat fc-widget-content fc-last", "data-date": "2014-01-11" },
+	                                'td',
+	                                { className: 'fc-day fc-sat fc-widget-content fc-last', 'data-date': '2014-01-11' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "8"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '8'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 0 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              )
 	                            ),
 	                            _react2.default.createElement(
-	                              "tr",
-	                              { className: "fc-week" },
+	                              'tr',
+	                              { className: 'fc-week' },
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-sun fc-widget-content fc-first", "data-date": "2014-01-12" },
+	                                'td',
+	                                { className: 'fc-day fc-sun fc-widget-content fc-first', 'data-date': '2014-01-12' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  { style: { minHeight: 80 } },
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "9"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '9'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 25 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-mon fc-widget-content", "data-date": "2014-01-13" },
+	                                'td',
+	                                { className: 'fc-day fc-mon fc-widget-content', 'data-date': '2014-01-13' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "10"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '10'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 25 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-tue fc-widget-content", "data-date": "2014-01-14" },
+	                                'td',
+	                                { className: 'fc-day fc-tue fc-widget-content', 'data-date': '2014-01-14' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "11"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '11'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 25 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-wed fc-widget-content", "data-date": "2014-01-15" },
+	                                'td',
+	                                { className: 'fc-day fc-wed fc-widget-content', 'data-date': '2014-01-15' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "12"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '12'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 25 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-thu fc-widget-content", "data-date": "2014-01-16" },
+	                                'td',
+	                                { className: 'fc-day fc-thu fc-widget-content', 'data-date': '2014-01-16' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "13"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '13'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 25 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-fri fc-widget-content", "data-date": "2014-01-17" },
+	                                'td',
+	                                { className: 'fc-day fc-fri fc-widget-content', 'data-date': '2014-01-17' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "14"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '14'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 25 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-sat fc-widget-content fc-last", "data-date": "2014-01-18" },
+	                                'td',
+	                                { className: 'fc-day fc-sat fc-widget-content fc-last', 'data-date': '2014-01-18' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "15"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '15'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 25 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              )
 	                            ),
 	                            _react2.default.createElement(
-	                              "tr",
-	                              { className: "fc-week" },
+	                              'tr',
+	                              { className: 'fc-week' },
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-sun fc-widget-content fc-first", "data-date": "2014-01-19" },
+	                                'td',
+	                                { className: 'fc-day fc-sun fc-widget-content fc-first', 'data-date': '2014-01-19' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  { style: { minHeight: 80 } },
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "16"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '16'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative' } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-mon fc-widget-content", "data-date": "2014-01-20" },
+	                                'td',
+	                                { className: 'fc-day fc-mon fc-widget-content', 'data-date': '2014-01-20' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "17"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '17'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative' } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-tue fc-widget-content", "data-date": "2014-01-21" },
+	                                'td',
+	                                { className: 'fc-day fc-tue fc-widget-content', 'data-date': '2014-01-21' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "18"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '18'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative' } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-wed fc-widget-content fc-today fc-state-highlight", "data-date": "2014-01-22" },
+	                                'td',
+	                                { className: 'fc-day fc-wed fc-widget-content fc-today fc-state-highlight', 'data-date': '2014-01-22' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "19"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '19'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative' } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-thu fc-widget-content", "data-date": "2014-01-23" },
+	                                'td',
+	                                { className: 'fc-day fc-thu fc-widget-content', 'data-date': '2014-01-23' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "20"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '20'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative' } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-fri fc-widget-content", "data-date": "2014-01-24" },
+	                                'td',
+	                                { className: 'fc-day fc-fri fc-widget-content', 'data-date': '2014-01-24' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "21"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '21'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative' } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-sat fc-widget-content fc-last", "data-date": "2014-01-25" },
+	                                'td',
+	                                { className: 'fc-day fc-sat fc-widget-content fc-last', 'data-date': '2014-01-25' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "22"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '22'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative' } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              )
 	                            ),
 	                            _react2.default.createElement(
-	                              "tr",
-	                              { className: "fc-week" },
+	                              'tr',
+	                              { className: 'fc-week' },
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-sun fc-widget-content fc-first", "data-date": "2014-01-26" },
+	                                'td',
+	                                { className: 'fc-day fc-sun fc-widget-content fc-first', 'data-date': '2014-01-26' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  { style: { minHeight: 80 } },
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "23"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '23'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 25 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-mon fc-widget-content", "data-date": "2014-01-27" },
+	                                'td',
+	                                { className: 'fc-day fc-mon fc-widget-content', 'data-date': '2014-01-27' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "24"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '24'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 25 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-tue fc-widget-content", "data-date": "2014-01-28" },
+	                                'td',
+	                                { className: 'fc-day fc-tue fc-widget-content', 'data-date': '2014-01-28' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "25"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '25'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 25 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-wed fc-widget-content", "data-date": "2014-01-29" },
+	                                'td',
+	                                { className: 'fc-day fc-wed fc-widget-content', 'data-date': '2014-01-29' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "26"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '26'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 25 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-thu fc-widget-content", "data-date": "2014-01-30" },
+	                                'td',
+	                                { className: 'fc-day fc-thu fc-widget-content', 'data-date': '2014-01-30' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "27"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '27'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 25 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-fri fc-widget-content", "data-date": "2014-01-31" },
+	                                'td',
+	                                { className: 'fc-day fc-fri fc-widget-content', 'data-date': '2014-01-31' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "28"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '28'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 25 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-sat fc-widget-content fc-other-month fc-last", "data-date": "2014-02-01" },
+	                                'td',
+	                                { className: 'fc-day fc-sat fc-widget-content fc-other-month fc-last', 'data-date': '2014-02-01' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "29"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '29'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 25 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              )
 	                            ),
 	                            _react2.default.createElement(
-	                              "tr",
-	                              { className: "fc-week fc-last" },
+	                              'tr',
+	                              { className: 'fc-week fc-last' },
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-sun fc-widget-content fc-other-month fc-first", "data-date": "2014-02-02" },
+	                                'td',
+	                                { className: 'fc-day fc-sun fc-widget-content fc-other-month fc-first', 'data-date': '2014-02-02' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  { style: { minHeight: 80 } },
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "30"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '30'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 0 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-mon fc-widget-content fc-other-month", "data-date": "2014-02-03" },
+	                                'td',
+	                                { className: 'fc-day fc-mon fc-widget-content fc-other-month', 'data-date': '2014-02-03' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "1"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '1'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 0 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-tue fc-widget-content fc-other-month", "data-date": "2014-02-04" },
+	                                'td',
+	                                { className: 'fc-day fc-tue fc-widget-content fc-other-month', 'data-date': '2014-02-04' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "2"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '2'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 0 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-wed fc-widget-content fc-other-month", "data-date": "2014-02-05" },
+	                                'td',
+	                                { className: 'fc-day fc-wed fc-widget-content fc-other-month', 'data-date': '2014-02-05' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "3"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '3'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 0 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-thu fc-widget-content fc-other-month", "data-date": "2014-02-06" },
+	                                'td',
+	                                { className: 'fc-day fc-thu fc-widget-content fc-other-month', 'data-date': '2014-02-06' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "4"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '4'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 0 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-fri fc-widget-content fc-other-month", "data-date": "2014-02-07" },
+	                                'td',
+	                                { className: 'fc-day fc-fri fc-widget-content fc-other-month', 'data-date': '2014-02-07' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "5"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '5'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 0 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
 	                              ),
 	                              _react2.default.createElement(
-	                                "td",
-	                                { className: "fc-day fc-sat fc-widget-content fc-other-month fc-last", "data-date": "2014-02-08" },
+	                                'td',
+	                                { className: 'fc-day fc-sat fc-widget-content fc-other-month fc-last', 'data-date': '2014-02-08' },
 	                                _react2.default.createElement(
-	                                  "div",
+	                                  'div',
 	                                  null,
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-number" },
-	                                    "6"
+	                                    'div',
+	                                    { className: 'fc-day-number' },
+	                                    '6'
 	                                  ),
 	                                  _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fc-day-content" },
+	                                    'div',
+	                                    { className: 'fc-day-content' },
 	                                    _react2.default.createElement(
-	                                      "div",
+	                                      'div',
 	                                      { style: { position: 'relative', height: 0 } },
-	                                      "\xA0"
+	                                      '\xA0'
 	                                    )
 	                                  )
 	                                )
@@ -32419,277 +32358,277 @@
 	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "modal fade", id: "unlockModal", tabIndex: -1, role: "dialog", "aria-labelledby": "myModalLabel", "aria-hidden": "true" },
+	          'div',
+	          { className: 'modal fade', id: 'unlockModal', tabIndex: -1, role: 'dialog', 'aria-labelledby': 'myModalLabel', 'aria-hidden': 'true' },
 	          _react2.default.createElement(
-	            "div",
-	            { className: "modal-dialog" },
+	            'div',
+	            { className: 'modal-dialog' },
 	            _react2.default.createElement(
-	              "div",
-	              { className: "modal-content" },
+	              'div',
+	              { className: 'modal-content' },
 	              _react2.default.createElement(
-	                "div",
-	                { className: "modal-header" },
+	                'div',
+	                { className: 'modal-header' },
 	                _react2.default.createElement(
-	                  "button",
-	                  { type: "button", className: "close", "data-dismiss": "modal", "aria-hidden": "true" },
-	                  "\xD7"
+	                  'button',
+	                  { type: 'button', className: 'close', 'data-dismiss': 'modal', 'aria-hidden': 'true' },
+	                  '\xD7'
 	                ),
 	                _react2.default.createElement(
-	                  "h4",
-	                  { className: "modal-title", id: "myModalLabel" },
-	                  _react2.default.createElement("i", { className: "fa fa-fw fa-unlock" }),
-	                  " Unlock Calendar"
+	                  'h4',
+	                  { className: 'modal-title', id: 'myModalLabel' },
+	                  _react2.default.createElement('i', { className: 'fa fa-fw fa-unlock' }),
+	                  ' Unlock Calendar'
 	                )
 	              ),
 	              _react2.default.createElement(
-	                "div",
-	                { className: "modal-body" },
+	                'div',
+	                { className: 'modal-body' },
 	                _react2.default.createElement(
-	                  "p",
-	                  { className: "h3 text-center text-primary" },
-	                  _react2.default.createElement("i", { className: "fa fa-thumbs-up" }),
-	                  " Woop!"
+	                  'p',
+	                  { className: 'h3 text-center text-primary' },
+	                  _react2.default.createElement('i', { className: 'fa fa-thumbs-up' }),
+	                  ' Woop!'
 	                ),
 	                _react2.default.createElement(
-	                  "p",
-	                  { className: "lead text-center" },
-	                  "Here's what happens when you unlock your calendar:"
+	                  'p',
+	                  { className: 'lead text-center' },
+	                  'Here\'s what happens when you unlock your calendar:'
 	                ),
-	                _react2.default.createElement("hr", null),
+	                _react2.default.createElement('hr', null),
 	                _react2.default.createElement(
-	                  "div",
-	                  { className: "row" },
+	                  'div',
+	                  { className: 'row' },
 	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "col-xs-1" },
-	                    " ",
-	                    _react2.default.createElement("i", { className: "fa fa-fw fa-thumbs-up text-primary" })
+	                    'div',
+	                    { className: 'col-xs-1' },
+	                    ' ',
+	                    _react2.default.createElement('i', { className: 'fa fa-fw fa-thumbs-up text-primary' })
 	                  ),
 	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "col-xs-11" },
-	                    "You'll instantly get access to all ",
+	                    'div',
+	                    { className: 'col-xs-11' },
+	                    'You\'ll instantly get access to all ',
 	                    _react2.default.createElement(
-	                      "strong",
-	                      { className: "text-primary" },
-	                      "67 shared assignments"
+	                      'strong',
+	                      { className: 'text-primary' },
+	                      '67 shared assignments'
 	                    ),
-	                    " on your calendar."
+	                    ' on your calendar.'
 	                  ),
 	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "col-xs-1" },
-	                    " ",
-	                    _react2.default.createElement("i", { className: "fa fa-fw fa-thumbs-up text-primary" })
+	                    'div',
+	                    { className: 'col-xs-1' },
+	                    ' ',
+	                    _react2.default.createElement('i', { className: 'fa fa-fw fa-thumbs-up text-primary' })
 	                  ),
 	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "col-xs-11" },
-	                    "You'll be ",
+	                    'div',
+	                    { className: 'col-xs-11' },
+	                    'You\'ll be ',
 	                    _react2.default.createElement(
-	                      "strong",
+	                      'strong',
 	                      null,
-	                      "notified"
+	                      'notified'
 	                    ),
-	                    " whenever a shared assignment is ",
+	                    ' whenever a shared assignment is ',
 	                    _react2.default.createElement(
-	                      "strong",
+	                      'strong',
 	                      null,
-	                      "updated or edited"
+	                      'updated or edited'
 	                    ),
-	                    " throughout the semester."
+	                    ' throughout the semester.'
 	                  ),
 	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "col-xs-1" },
-	                    " ",
-	                    _react2.default.createElement("i", { className: "fa fa-fw fa-thumbs-up text-primary" })
+	                    'div',
+	                    { className: 'col-xs-1' },
+	                    ' ',
+	                    _react2.default.createElement('i', { className: 'fa fa-fw fa-thumbs-up text-primary' })
 	                  ),
 	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "col-xs-11" },
-	                    "You'll be able to ",
+	                    'div',
+	                    { className: 'col-xs-11' },
+	                    'You\'ll be able to ',
 	                    _react2.default.createElement(
-	                      "strong",
+	                      'strong',
 	                      null,
-	                      "share your own calendar assignments"
+	                      'share your own calendar assignments'
 	                    ),
-	                    " with your class, which means you can start making money instantly."
+	                    ' with your class, which means you can start making money instantly.'
 	                  ),
 	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "col-xs-1" },
-	                    " ",
-	                    _react2.default.createElement("i", { className: "fa fa-fw fa-thumbs-up text-primary" })
+	                    'div',
+	                    { className: 'col-xs-1' },
+	                    ' ',
+	                    _react2.default.createElement('i', { className: 'fa fa-fw fa-thumbs-up text-primary' })
 	                  ),
 	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "col-xs-11" },
-	                    "You'll gain access to special features of mchp, such as ",
+	                    'div',
+	                    { className: 'col-xs-11' },
+	                    'You\'ll gain access to special features of mchp, such as ',
 	                    _react2.default.createElement(
-	                      "strong",
+	                      'strong',
 	                      null,
-	                      "calendar integration"
+	                      'calendar integration'
 	                    ),
-	                    " in your College Pulse and in each of your class's activity sections."
+	                    ' in your College Pulse and in each of your class\'s activity sections.'
 	                  )
 	                ),
-	                _react2.default.createElement("hr", null),
+	                _react2.default.createElement('hr', null),
 	                _react2.default.createElement(
-	                  "div",
-	                  { className: "panel panel-default" },
+	                  'div',
+	                  { className: 'panel panel-default' },
 	                  _react2.default.createElement(
-	                    "table",
-	                    { className: "table table-hover" },
+	                    'table',
+	                    { className: 'table table-hover' },
 	                    _react2.default.createElement(
-	                      "thead",
+	                      'thead',
 	                      null,
 	                      _react2.default.createElement(
-	                        "tr",
+	                        'tr',
 	                        null,
 	                        _react2.default.createElement(
-	                          "th",
+	                          'th',
 	                          null,
-	                          "Class Name"
+	                          'Class Name'
 	                        ),
 	                        _react2.default.createElement(
-	                          "th",
+	                          'th',
 	                          null,
-	                          "# of Assignments"
+	                          '# of Assignments'
 	                        ),
 	                        _react2.default.createElement(
-	                          "th",
+	                          'th',
 	                          null,
-	                          "Unlock"
+	                          'Unlock'
 	                        )
 	                      )
 	                    ),
 	                    _react2.default.createElement(
-	                      "tbody",
+	                      'tbody',
 	                      null,
 	                      _react2.default.createElement(
-	                        "tr",
+	                        'tr',
 	                        null,
 	                        _react2.default.createElement(
-	                          "td",
+	                          'td',
 	                          null,
-	                          _react2.default.createElement("i", { className: "fa fa-book" }),
-	                          " ECON 200"
+	                          _react2.default.createElement('i', { className: 'fa fa-book' }),
+	                          ' ECON 200'
 	                        ),
 	                        _react2.default.createElement(
-	                          "td",
+	                          'td',
 	                          null,
 	                          _react2.default.createElement(
-	                            "strong",
-	                            { className: "text-primary" },
-	                            _react2.default.createElement("i", { className: "fa fa-calendar" }),
-	                            " 15 now"
+	                            'strong',
+	                            { className: 'text-primary' },
+	                            _react2.default.createElement('i', { className: 'fa fa-calendar' }),
+	                            ' 15 now'
 	                          ),
-	                          " + all future"
+	                          ' + all future'
 	                        ),
 	                        _react2.default.createElement(
-	                          "td",
+	                          'td',
 	                          null,
 	                          _react2.default.createElement(
-	                            "i",
-	                            { className: "fa fa-check-circle text-success" },
-	                            " yes"
+	                            'i',
+	                            { className: 'fa fa-check-circle text-success' },
+	                            ' yes'
 	                          )
 	                        )
 	                      ),
 	                      _react2.default.createElement(
-	                        "tr",
+	                        'tr',
 	                        null,
 	                        _react2.default.createElement(
-	                          "td",
+	                          'td',
 	                          null,
-	                          _react2.default.createElement("i", { className: "fa fa-book" }),
-	                          " ACCT 210"
+	                          _react2.default.createElement('i', { className: 'fa fa-book' }),
+	                          ' ACCT 210'
 	                        ),
 	                        _react2.default.createElement(
-	                          "td",
+	                          'td',
 	                          null,
 	                          _react2.default.createElement(
-	                            "strong",
-	                            { className: "text-primary" },
-	                            _react2.default.createElement("i", { className: "fa fa-calendar" }),
-	                            " 22 now"
+	                            'strong',
+	                            { className: 'text-primary' },
+	                            _react2.default.createElement('i', { className: 'fa fa-calendar' }),
+	                            ' 22 now'
 	                          ),
-	                          " + all future"
+	                          ' + all future'
 	                        ),
 	                        _react2.default.createElement(
-	                          "td",
+	                          'td',
 	                          null,
 	                          _react2.default.createElement(
-	                            "i",
-	                            { className: "fa fa-check-circle text-success" },
-	                            " yes"
+	                            'i',
+	                            { className: 'fa fa-check-circle text-success' },
+	                            ' yes'
 	                          )
 	                        )
 	                      ),
 	                      _react2.default.createElement(
-	                        "tr",
+	                        'tr',
 	                        null,
 	                        _react2.default.createElement(
-	                          "td",
+	                          'td',
 	                          null,
-	                          _react2.default.createElement("i", { className: "fa fa-book" })
+	                          _react2.default.createElement('i', { className: 'fa fa-book' })
 	                        ),
 	                        _react2.default.createElement(
-	                          "td",
+	                          'td',
 	                          null,
 	                          _react2.default.createElement(
-	                            "strong",
-	                            { className: "text-primary" },
-	                            _react2.default.createElement("i", { className: "fa fa-calendar" }),
-	                            " 30 now"
+	                            'strong',
+	                            { className: 'text-primary' },
+	                            _react2.default.createElement('i', { className: 'fa fa-calendar' }),
+	                            ' 30 now'
 	                          ),
-	                          " + all future"
+	                          ' + all future'
 	                        ),
 	                        _react2.default.createElement(
-	                          "td",
+	                          'td',
 	                          null,
-	                          " ",
+	                          ' ',
 	                          _react2.default.createElement(
-	                            "i",
-	                            { className: "fa fa-check-circle text-success" },
-	                            " yes"
+	                            'i',
+	                            { className: 'fa fa-check-circle text-success' },
+	                            ' yes'
 	                          )
 	                        )
 	                      )
 	                    )
 	                  ),
 	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "panel-footer text-center" },
-	                    "You're unlocking: ",
+	                    'div',
+	                    { className: 'panel-footer text-center' },
+	                    'You\'re unlocking: ',
 	                    _react2.default.createElement(
-	                      "strong",
+	                      'strong',
 	                      null,
-	                      "3 classes"
+	                      '3 classes'
 	                    ),
-	                    " for ",
+	                    ' for ',
 	                    _react2.default.createElement(
-	                      "strong",
+	                      'strong',
 	                      null,
-	                      "300 points"
+	                      '300 points'
 	                    )
 	                  )
 	                )
 	              ),
 	              _react2.default.createElement(
-	                "div",
-	                { className: "modal-footer" },
+	                'div',
+	                { className: 'modal-footer' },
 	                _react2.default.createElement(
-	                  "button",
-	                  { type: "button", className: "btn btn-default", "data-dismiss": "modal" },
-	                  "Close"
+	                  'button',
+	                  { type: 'button', className: 'btn btn-default', 'data-dismiss': 'modal' },
+	                  'Close'
 	                ),
 	                _react2.default.createElement(
-	                  "button",
-	                  { type: "button", className: "btn btn-success" },
-	                  "Unlock!"
+	                  'button',
+	                  { type: 'button', className: 'btn btn-success' },
+	                  'Unlock!'
 	                )
 	              )
 	            )
@@ -32702,7 +32641,176 @@
 	  return Calendar;
 	}(_react.Component);
 
-	exports.default = Calendar;
+	function mapDispatchToProps(dispatch) {
+
+	  return (0, _redux.bindActionCreators)({ getSong: _getSong.getSong }, dispatch);
+	}
+
+	exports.default = (0, _reactRedux.connect)(null, mapDispatchToProps)(Calendar);
+
+/***/ },
+/* 368 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRedux = __webpack_require__(178);
+
+	var _AppBar = __webpack_require__(377);
+
+	var _AppBar2 = _interopRequireDefault(_AppBar);
+
+	var _IconButton = __webpack_require__(386);
+
+	var _IconButton2 = _interopRequireDefault(_IconButton);
+
+	var _IconMenu = __webpack_require__(426);
+
+	var _IconMenu2 = _interopRequireDefault(_IconMenu);
+
+	var _MenuItem = __webpack_require__(450);
+
+	var _MenuItem2 = _interopRequireDefault(_MenuItem);
+
+	var _FlatButton = __webpack_require__(451);
+
+	var _FlatButton2 = _interopRequireDefault(_FlatButton);
+
+	var _Toggle = __webpack_require__(454);
+
+	var _Toggle2 = _interopRequireDefault(_Toggle);
+
+	var _moreVert = __webpack_require__(457);
+
+	var _moreVert2 = _interopRequireDefault(_moreVert);
+
+	var _close = __webpack_require__(458);
+
+	var _close2 = _interopRequireDefault(_close);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Login = function (_Component) {
+	  _inherits(Login, _Component);
+
+	  function Login(props) {
+	    _classCallCheck(this, Login);
+
+	    return _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).call(this, props));
+	  }
+
+	  _createClass(Login, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(_FlatButton2.default, _extends({}, this.props, { label: 'Login' }));
+	    }
+	  }]);
+
+	  return Login;
+	}(_react.Component);
+
+	Login.muiName = 'FlatButton';
+
+
+	var Logged = function Logged(props) {
+	  return _react2.default.createElement(
+	    _IconMenu2.default,
+	    _extends({}, props, {
+	      iconButtonElement: _react2.default.createElement(
+	        _IconButton2.default,
+	        null,
+	        _react2.default.createElement(_moreVert2.default, null)
+	      ),
+	      targetOrigin: { horizontal: 'right', vertical: 'top' },
+	      anchorOrigin: { horizontal: 'right', vertical: 'top' }
+	    }),
+	    _react2.default.createElement(_MenuItem2.default, { primaryText: 'Refresh' }),
+	    _react2.default.createElement(_MenuItem2.default, { primaryText: 'Help' }),
+	    _react2.default.createElement(_MenuItem2.default, { primaryText: 'Sign out' })
+	  );
+	};
+
+	Logged.muiName = 'IconMenu';
+
+	var AppBarExampleComposition = function (_Component2) {
+	  _inherits(AppBarExampleComposition, _Component2);
+
+	  function AppBarExampleComposition(props) {
+	    _classCallCheck(this, AppBarExampleComposition);
+
+	    var _this2 = _possibleConstructorReturn(this, (AppBarExampleComposition.__proto__ || Object.getPrototypeOf(AppBarExampleComposition)).call(this, props));
+
+	    _this2.handleChange = function (event, logged) {
+	      _this2.setState({ logged: logged });
+	    };
+
+	    _this2.state = {
+	      logged: true,
+	      playSong: '0zVMzJ37VQNFUNvdxxat2E'
+	    };
+
+	    return _this2;
+	  }
+
+	  _createClass(AppBarExampleComposition, [{
+	    key: 'componentWillMount',
+	    value: function componentWillMount() {}
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { id: 'overview', className: 'col-sm-8 col-md-9 animated animated-sm bounceInUp' },
+	        _react2.default.createElement(_AppBar2.default, {
+	          title: 'De Ja Muse',
+	          iconElementRight: this.state.logged ? _react2.default.createElement(Logged, null) : _react2.default.createElement(Login, null)
+	        }),
+	        _react2.default.createElement(
+	          'div',
+	          { id: 'widget' },
+	          _react2.default.createElement('iframe', { src: 'https://embed.spotify.com/?uri=spotify:track:' + (this.props.song ? this.props.song : this.state.playSong), width: 250, height: 330, frameBorder: 0, allowTransparency: 'true' }),
+	          _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	              'h1',
+	              { id: 'plays' },
+	              ' plays '
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return AppBarExampleComposition;
+	}(_react.Component);
+
+	function mapStateToProps(state) {
+	  return {
+	    song: state.song
+	  };
+	}
+
+	exports.default = (0, _reactRedux.connect)(mapStateToProps)(AppBarExampleComposition);
 
 /***/ },
 /* 369 */
@@ -32716,18 +32824,47 @@
 
 	var _redux = __webpack_require__(185);
 
-	var _get_song = __webpack_require__(460);
+	var _get_song = __webpack_require__(370);
 
 	var _get_song2 = _interopRequireDefault(_get_song);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var rootReducer = (0, _redux.combineReducers)({});
+	var rootReducer = (0, _redux.combineReducers)({
+
+	  song: _get_song2.default
+
+	});
 
 	exports.default = rootReducer;
 
 /***/ },
-/* 370 */,
+/* 370 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	exports.default = function () {
+	  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+	  var action = arguments[1];
+
+	  switch (action.type) {
+
+	    case 'SONG':
+
+	      console.log("ACTION PAYLOAD:", action.payload);
+
+	      return action.payload;
+	  }
+
+	  return state;
+	};
+
+/***/ },
 /* 371 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -37450,168 +37587,13 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactRedux = __webpack_require__(178);
-
-	var _AppBar = __webpack_require__(377);
-
-	var _AppBar2 = _interopRequireDefault(_AppBar);
-
-	var _IconButton = __webpack_require__(386);
-
-	var _IconButton2 = _interopRequireDefault(_IconButton);
-
-	var _IconMenu = __webpack_require__(427);
-
-	var _IconMenu2 = _interopRequireDefault(_IconMenu);
-
-	var _MenuItem = __webpack_require__(451);
-
-	var _MenuItem2 = _interopRequireDefault(_MenuItem);
-
-	var _FlatButton = __webpack_require__(452);
-
-	var _FlatButton2 = _interopRequireDefault(_FlatButton);
-
-	var _Toggle = __webpack_require__(455);
-
-	var _Toggle2 = _interopRequireDefault(_Toggle);
-
-	var _moreVert = __webpack_require__(458);
-
-	var _moreVert2 = _interopRequireDefault(_moreVert);
-
-	var _close = __webpack_require__(459);
-
-	var _close2 = _interopRequireDefault(_close);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var styles = {};
-
-	var Login = function (_Component) {
-	  _inherits(Login, _Component);
-
-	  function Login(props) {
-	    _classCallCheck(this, Login);
-
-	    var _this = _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).call(this, props));
-
-	    _this.state = {};
-	    return _this;
-	  }
-
-	  _createClass(Login, [{
-	    key: 'componentWillMount',
-	    value: function componentWillMount() {}
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(_FlatButton2.default, _extends({}, this.props, { label: 'Login' }));
-	    }
-	  }]);
-
-	  return Login;
-	}(_react.Component);
-
-	Login.muiName = 'FlatButton';
-
-
-	var Logged = function Logged(props) {
-	  return _react2.default.createElement(
-	    _IconMenu2.default,
-	    _extends({}, props, {
-	      iconButtonElement: _react2.default.createElement(
-	        _IconButton2.default,
-	        null,
-	        _react2.default.createElement(_moreVert2.default, null)
-	      ),
-	      targetOrigin: { horizontal: 'right', vertical: 'top' },
-	      anchorOrigin: { horizontal: 'right', vertical: 'top' }
-	    }),
-	    _react2.default.createElement(_MenuItem2.default, { primaryText: 'Refresh' }),
-	    _react2.default.createElement(_MenuItem2.default, { primaryText: 'Help' }),
-	    _react2.default.createElement(_MenuItem2.default, { primaryText: 'Sign out' })
-	  );
-	};
-
-	Logged.muiName = 'IconMenu';
-
-	var AppBarExampleComposition = function (_Component2) {
-	  _inherits(AppBarExampleComposition, _Component2);
-
-	  function AppBarExampleComposition() {
-	    var _ref;
-
-	    var _temp, _this2, _ret;
-
-	    _classCallCheck(this, AppBarExampleComposition);
-
-	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	      args[_key] = arguments[_key];
-	    }
-
-	    return _ret = (_temp = (_this2 = _possibleConstructorReturn(this, (_ref = AppBarExampleComposition.__proto__ || Object.getPrototypeOf(AppBarExampleComposition)).call.apply(_ref, [this].concat(args))), _this2), _this2.state = {
-	      logged: true
-	    }, _this2.handleChange = function (event, logged) {
-	      _this2.setState({ logged: logged });
-	    }, _temp), _possibleConstructorReturn(_this2, _ret);
-	  }
-
-	  _createClass(AppBarExampleComposition, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        { id: 'overview', className: 'col-sm-8 col-md-9 animated animated-sm bounceInUp' },
-	        _react2.default.createElement(_AppBar2.default, {
-	          title: 'Sound Journal',
-	          iconElementRight: this.state.logged ? _react2.default.createElement(Logged, null) : _react2.default.createElement(Login, null)
-	        }),
-	        _react2.default.createElement(
-	          'div',
-	          { id: 'widget' },
-	          _react2.default.createElement('iframe', { src: 'https://open.spotify.com/embed?uri=spotify%3Atrack%3A33Q6ldVXuJyQmqs8BmAa0k', width: 250, height: 330, frameBorder: 0, allowTransparency: 'true' })
-	        )
-	      );
-	    }
-	  }]);
-
-	  return AppBarExampleComposition;
-	}(_react.Component);
-
-	exports.default = AppBarExampleComposition;
-
-/***/ },
-/* 427 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
 	exports.default = exports.MenuItem = exports.IconMenu = undefined;
 
-	var _IconMenu2 = __webpack_require__(428);
+	var _IconMenu2 = __webpack_require__(427);
 
 	var _IconMenu3 = _interopRequireDefault(_IconMenu2);
 
-	var _MenuItem2 = __webpack_require__(445);
+	var _MenuItem2 = __webpack_require__(444);
 
 	var _MenuItem3 = _interopRequireDefault(_MenuItem2);
 
@@ -37622,7 +37604,7 @@
 	exports.default = _IconMenu3.default;
 
 /***/ },
-/* 428 */
+/* 427 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -37679,11 +37661,11 @@
 
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 
-	var _Menu = __webpack_require__(429);
+	var _Menu = __webpack_require__(428);
 
 	var _Menu2 = _interopRequireDefault(_Menu);
 
-	var _Popover = __webpack_require__(435);
+	var _Popover = __webpack_require__(434);
 
 	var _Popover2 = _interopRequireDefault(_Popover);
 
@@ -38043,7 +38025,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 429 */
+/* 428 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -38100,7 +38082,7 @@
 
 	var _shallowEqual2 = _interopRequireDefault(_shallowEqual);
 
-	var _ClickAwayListener = __webpack_require__(430);
+	var _ClickAwayListener = __webpack_require__(429);
 
 	var _ClickAwayListener2 = _interopRequireDefault(_ClickAwayListener);
 
@@ -38112,11 +38094,11 @@
 
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 
-	var _List = __webpack_require__(431);
+	var _List = __webpack_require__(430);
 
 	var _List2 = _interopRequireDefault(_List);
 
-	var _menuUtils = __webpack_require__(434);
+	var _menuUtils = __webpack_require__(433);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -38729,7 +38711,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 430 */
+/* 429 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -38860,7 +38842,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 431 */
+/* 430 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -38905,7 +38887,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Subheader = __webpack_require__(432);
+	var _Subheader = __webpack_require__(431);
 
 	var _Subheader2 = _interopRequireDefault(_Subheader);
 
@@ -38970,7 +38952,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 432 */
+/* 431 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -38980,7 +38962,7 @@
 	});
 	exports.default = undefined;
 
-	var _Subheader = __webpack_require__(433);
+	var _Subheader = __webpack_require__(432);
 
 	var _Subheader2 = _interopRequireDefault(_Subheader);
 
@@ -38989,7 +38971,7 @@
 	exports.default = _Subheader2.default;
 
 /***/ },
-/* 433 */
+/* 432 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -39074,7 +39056,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 434 */
+/* 433 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39118,7 +39100,7 @@
 	}();
 
 /***/ },
-/* 435 */
+/* 434 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -39167,11 +39149,11 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _reactEventListener = __webpack_require__(436);
+	var _reactEventListener = __webpack_require__(435);
 
 	var _reactEventListener2 = _interopRequireDefault(_reactEventListener);
 
-	var _RenderToLayer = __webpack_require__(441);
+	var _RenderToLayer = __webpack_require__(440);
 
 	var _RenderToLayer2 = _interopRequireDefault(_RenderToLayer);
 
@@ -39183,15 +39165,15 @@
 
 	var _Paper2 = _interopRequireDefault(_Paper);
 
-	var _lodash = __webpack_require__(442);
+	var _lodash = __webpack_require__(441);
 
 	var _lodash2 = _interopRequireDefault(_lodash);
 
-	var _PopoverAnimationDefault = __webpack_require__(443);
+	var _PopoverAnimationDefault = __webpack_require__(442);
 
 	var _PopoverAnimationDefault2 = _interopRequireDefault(_PopoverAnimationDefault);
 
-	var _iOSHelpers = __webpack_require__(444);
+	var _iOSHelpers = __webpack_require__(443);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -39632,7 +39614,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 436 */
+/* 435 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -39679,7 +39661,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactAddonsShallowCompare = __webpack_require__(437);
+	var _reactAddonsShallowCompare = __webpack_require__(436);
 
 	var _reactAddonsShallowCompare2 = _interopRequireDefault(_reactAddonsShallowCompare);
 
@@ -39687,7 +39669,7 @@
 
 	var _warning2 = _interopRequireDefault(_warning);
 
-	var _supports = __webpack_require__(439);
+	var _supports = __webpack_require__(438);
 
 	var supports = _interopRequireWildcard(_supports);
 
@@ -39855,13 +39837,13 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 437 */
+/* 436 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(438);
+	module.exports = __webpack_require__(437);
 
 /***/ },
-/* 438 */
+/* 437 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -39890,7 +39872,7 @@
 	module.exports = shallowCompare;
 
 /***/ },
-/* 439 */
+/* 438 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39900,7 +39882,7 @@
 	});
 	exports.passiveOption = exports.detachEvent = exports.attachEvent = exports.removeEventListener = exports.addEventListener = exports.canUseDOM = undefined;
 
-	var _defineProperty = __webpack_require__(440);
+	var _defineProperty = __webpack_require__(439);
 
 	var _defineProperty2 = _interopRequireDefault(_defineProperty);
 
@@ -39943,7 +39925,7 @@
 	}();
 
 /***/ },
-/* 440 */
+/* 439 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -39967,7 +39949,7 @@
 	}
 
 /***/ },
-/* 441 */
+/* 440 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -40152,7 +40134,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 442 */
+/* 441 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/**
@@ -40598,7 +40580,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 443 */
+/* 442 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -40772,7 +40754,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 444 */
+/* 443 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -40804,7 +40786,7 @@
 	};
 
 /***/ },
-/* 445 */
+/* 444 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -40857,19 +40839,19 @@
 
 	var _shallowEqual2 = _interopRequireDefault(_shallowEqual);
 
-	var _Popover = __webpack_require__(435);
+	var _Popover = __webpack_require__(434);
 
 	var _Popover2 = _interopRequireDefault(_Popover);
 
-	var _check = __webpack_require__(446);
+	var _check = __webpack_require__(445);
 
 	var _check2 = _interopRequireDefault(_check);
 
-	var _ListItem = __webpack_require__(447);
+	var _ListItem = __webpack_require__(446);
 
 	var _ListItem2 = _interopRequireDefault(_ListItem);
 
-	var _Menu = __webpack_require__(429);
+	var _Menu = __webpack_require__(428);
 
 	var _Menu2 = _interopRequireDefault(_Menu);
 
@@ -41186,7 +41168,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 446 */
+/* 445 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41223,7 +41205,7 @@
 	exports.default = NavigationCheck;
 
 /***/ },
-/* 447 */
+/* 446 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -41290,15 +41272,15 @@
 
 	var _IconButton2 = _interopRequireDefault(_IconButton);
 
-	var _expandLess = __webpack_require__(448);
+	var _expandLess = __webpack_require__(447);
 
 	var _expandLess2 = _interopRequireDefault(_expandLess);
 
-	var _expandMore = __webpack_require__(449);
+	var _expandMore = __webpack_require__(448);
 
 	var _expandMore2 = _interopRequireDefault(_expandMore);
 
-	var _NestedList = __webpack_require__(450);
+	var _NestedList = __webpack_require__(449);
 
 	var _NestedList2 = _interopRequireDefault(_NestedList);
 
@@ -41940,7 +41922,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 448 */
+/* 447 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41977,7 +41959,7 @@
 	exports.default = NavigationExpandLess;
 
 /***/ },
-/* 449 */
+/* 448 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -42014,7 +41996,7 @@
 	exports.default = NavigationExpandMore;
 
 /***/ },
-/* 450 */
+/* 449 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -42027,7 +42009,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _List = __webpack_require__(431);
+	var _List = __webpack_require__(430);
 
 	var _List2 = _interopRequireDefault(_List);
 
@@ -42069,6 +42051,25 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
+/* 450 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = undefined;
+
+	var _MenuItem = __webpack_require__(444);
+
+	var _MenuItem2 = _interopRequireDefault(_MenuItem);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _MenuItem2.default;
+
+/***/ },
 /* 451 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -42079,26 +42080,7 @@
 	});
 	exports.default = undefined;
 
-	var _MenuItem = __webpack_require__(445);
-
-	var _MenuItem2 = _interopRequireDefault(_MenuItem);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = _MenuItem2.default;
-
-/***/ },
-/* 452 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = undefined;
-
-	var _FlatButton = __webpack_require__(453);
+	var _FlatButton = __webpack_require__(452);
 
 	var _FlatButton2 = _interopRequireDefault(_FlatButton);
 
@@ -42107,7 +42089,7 @@
 	exports.default = _FlatButton2.default;
 
 /***/ },
-/* 453 */
+/* 452 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -42164,7 +42146,7 @@
 
 	var _EnhancedButton2 = _interopRequireDefault(_EnhancedButton);
 
-	var _FlatButtonLabel = __webpack_require__(454);
+	var _FlatButtonLabel = __webpack_require__(453);
 
 	var _FlatButtonLabel2 = _interopRequireDefault(_FlatButtonLabel);
 
@@ -42437,7 +42419,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 454 */
+/* 453 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -42529,7 +42511,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 455 */
+/* 454 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -42539,7 +42521,7 @@
 	});
 	exports.default = undefined;
 
-	var _Toggle = __webpack_require__(456);
+	var _Toggle = __webpack_require__(455);
 
 	var _Toggle2 = _interopRequireDefault(_Toggle);
 
@@ -42548,7 +42530,7 @@
 	exports.default = _Toggle2.default;
 
 /***/ },
-/* 456 */
+/* 455 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -42601,7 +42583,7 @@
 
 	var _Paper2 = _interopRequireDefault(_Paper);
 
-	var _EnhancedSwitch = __webpack_require__(457);
+	var _EnhancedSwitch = __webpack_require__(456);
 
 	var _EnhancedSwitch2 = _interopRequireDefault(_EnhancedSwitch);
 
@@ -42880,7 +42862,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 457 */
+/* 456 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -42925,7 +42907,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactEventListener = __webpack_require__(436);
+	var _reactEventListener = __webpack_require__(435);
 
 	var _reactEventListener2 = _interopRequireDefault(_reactEventListener);
 
@@ -43337,7 +43319,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 458 */
+/* 457 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -43374,7 +43356,7 @@
 	exports.default = NavigationMoreVert;
 
 /***/ },
-/* 459 */
+/* 458 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -43411,30 +43393,26 @@
 	exports.default = NavigationClose;
 
 /***/ },
-/* 460 */
+/* 459 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	exports.getSong = getSong;
+	function getSong(num) {
+	  console.log(num);
+	  var songs = ['0zVMzJ37VQNFUNvdxxat2E', '3kxfsdsCpFgN412fpnW85Y', '2Mpj1Ul5OFPyyP4wB62Rvi', '5kIcrM3QVD4BQPFMszQnU1'];
 
-	exports.default = function () {
-	  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
-	  var action = arguments[1];
-
-	  switch (action.type) {
-
-	    case 'SONG':
-
-	      console.log("ACTION PAYLOAD:", action.payload);
-
-	      return action.payload;
-	  }
-
-	  return state;
-	};
+	  var newSong = songs[num];
+	  console.log(newSong);
+	  return {
+	    type: 'SONG',
+	    payload: newSong
+	  };
+	}
 
 /***/ }
 /******/ ]);

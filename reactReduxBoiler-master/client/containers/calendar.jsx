@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
-
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { getSong } from '../actions/getSong.js';
 
 class Calendar extends Component {
+
+
+
   render() {
     return (
      <div>
@@ -72,21 +77,21 @@ class Calendar extends Component {
                       <div className="fc-view fc-view-month fc-grid" style={{position: 'relative', minHeight: 1}} unselectable="on">
                         <div style={{position: 'absolute', zIndex: 8, top: 0, left: 0}}>
                           <div className="fc-event fc-event-hori fc-event-draggable fc-event-start fc-event-end ui-draggable" style={{position: 'absolute', zIndex: 8, left: 495, top: 60}} unselectable="on">
-                            <div className="fc-event-inner"> <span className="fc-event-title" style={{position: 'relative', left: 18, top: 10, fontSize: 20}}></span>
+                            <div className="fc-event-inner" onClick={() => { this.props.getSong(1)}}> <span className="fc-event-title" style={{position: 'relative', left: 18, top: 10, fontSize: 20}}></span>
                             </div>
                             <div className="ui-resizable-handle ui-resizable-e">&nbsp;&nbsp;&nbsp;</div>
                           </div>
                           <div className="fc-event fc-event-hori fc-event-draggable fc-event-start" style={{position: 'absolute', zIndex: 8, left: 804, width: 304, top: 352}}>
-                            <div className="fc-event-inner"> <span className="fc-event-title" style={{position: 'relative', left: 18, top: 10, fontSize: 20}}></span>
+                            <div className="fc-event-inner"  onClick={() => { this.props.getSong(1)}}> <span className="fc-event-title" style={{position: 'relative', left: 18, top: 10, fontSize: 20}}></span>
                             </div>
                           </div>
                           <div className="fc-event fc-event-hori fc-event-draggable fc-event-end" style={{position: 'absolute', zIndex: 8, left: 20, top: 470}}>
-                            <div className="fc-event-inner"> <span className="fc-event-title" style={{position: 'relative', left: 17, top: 9, fontSize: 20}}></span>
+                            <div className="fc-event-inner"  onClick={()=> {this.props.getSong(2)}}> <span className="fc-event-title" style={{position: 'relative', left: 17, top: 9, fontSize: 20}}></span>
                             </div>
                             <div className="ui-resizable-handle ui-resizable-e">&nbsp;&nbsp;&nbsp;</div>
                           </div>
                           <div className="fc-event fc-event-hori fc-event-draggable fc-event-start fc-event-end" style={{position: 'absolute', zIndex: 8, left: 306, top: 265}}>
-                            <div className="fc-event-inner"> <span className="fc-event-title" style={{position: 'relative', top: 11, left: 18, fontSize: 20}}></span>
+                            <div className="fc-event-inner"  onClick={() => { this.props.getSong(3)}}> <span className="fc-event-title" style={{position: 'relative', top: 11, left: 18, fontSize: 20}}></span>
                             </div>
                             <div className="ui-resizable-handle ui-resizable-e">&nbsp;&nbsp;&nbsp;</div>
                           </div>
@@ -532,4 +537,10 @@ class Calendar extends Component {
   }
 }
 
-export default Calendar;
+function mapDispatchToProps(dispatch) {
+ 
+  return bindActionCreators({ getSong : getSong }, dispatch);
+}
+
+
+export default connect(null, mapDispatchToProps)(Calendar);

@@ -3,6 +3,7 @@ import GetSong from './get_song.js';
 
 const rootReducer = combineReducers({
 
+	song: GetSong
   
 });
 

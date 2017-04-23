@@ -10,23 +10,12 @@ import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
 
 
-const styles = {
-
-}
-
-
 class Login extends Component {
 	 constructor(props) {
 	    super(props);
-
-	    this.state = {
-	                
-	                };
 	}
 
-  componentWillMount() {
- 
-  }
+
 
 
   static muiName = 'FlatButton';
@@ -56,28 +45,49 @@ const Logged = (props) => (
 Logged.muiName = 'IconMenu';
 
 class AppBarExampleComposition extends Component {
-  state = {
+    constructor(props) {
+    super(props);
+
+    this.state = {
     logged: true,
+    playSong:'0zVMzJ37VQNFUNvdxxat2E'
   };
+  
+} 
 
   handleChange = (event, logged) => {
     this.setState({logged: logged});
   };
 
+  componentWillMount() {
+    
+  }
+
   render() {
     return (
       <div id="overview" className="col-sm-8 col-md-9 animated animated-sm bounceInUp">
         <AppBar
-          title="Sound Journal"
+          title="De Ja Muse"
           iconElementRight={this.state.logged ? <Logged /> : <Login />}
         />
         <div id="widget">
-      	 <iframe src="https://open.spotify.com/embed?uri=spotify%3Atrack%3A33Q6ldVXuJyQmqs8BmAa0k" width={250} height={330} frameBorder={0} allowTransparency="true" />
 
+      	 <iframe src={`https://embed.spotify.com/?uri=spotify:track:${this.props.song ? this.props.song: this.state.playSong}`} width={250} height={330} frameBorder={0} allowTransparency="true" />
+           <div>
+              <h1 id="plays"> plays </h1> 
+           </div>
       </div>
       </div>
     );
   }
 }
 
-export default AppBarExampleComposition;
+
+function mapStateToProps(state) {
+  return {
+    song: state.song
+  };
+}
+
+
+export default connect(mapStateToProps)(AppBarExampleComposition);

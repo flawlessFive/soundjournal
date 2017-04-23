@@ -1,12 +1,12 @@
-export function getSong(str) {
-  	console.log("STR",str)
+export function getSong(num) {
+	console.log(num)
+  	const songs = ['0zVMzJ37VQNFUNvdxxat2E', '3kxfsdsCpFgN412fpnW85Y','2Mpj1Ul5OFPyyP4wB62Rvi', '5kIcrM3QVD4BQPFMszQnU1']
 
-  	let song = str.split("").reverse().join("");
-  	
-  	console.log(reversedStr)
+  	let newSong = songs[num]
+  	console.log(newSong)
   return {
-    type: 'REVERSE',
-    payload: reversedStr
+    type: 'SONG',
+    payload: newSong
   };
 }
 
